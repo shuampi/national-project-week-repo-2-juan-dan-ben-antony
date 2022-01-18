@@ -7,7 +7,7 @@ import { useState } from "react";
 
 function FeedbackForm() {
   const [title, setTitle] = useState("");
-  const [dayrating, setDayRating] = useState(0);
+  const [dayrating, setDayRating] = useState(5);
 
   function handleTitle(e) {
     setTitle(e);
