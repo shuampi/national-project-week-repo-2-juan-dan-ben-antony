@@ -1,9 +1,9 @@
 import React from "react";
 
-function QuestionCard() {
+function FeedbackCard() {
   return (
-    <div className="question-card">
-      <p>What went well and why?</p>
+    <div className="feedback-card">
+      <p>What went well / not so well today and why?</p>
       <form id="input-form" className="flexContainer">
         <input
           type="text"
@@ -28,4 +28,4 @@ function QuestionCard() {
   );
 }
 
-export default QuestionCard;
+export default FeedbackCard;

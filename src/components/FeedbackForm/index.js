@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import DaysTitle from "../DaysTitle";
-import QuestionCard from "../QuestionCard";
-
+import ReflectCard from "../ReflectCard";
+import FeedbackCard from "../FeedbackCard";
 import SubmitButton from "../SubmitButton";
 import { useState } from "react";
 import MoodBar from "../MoodBar";
@@ -23,27 +23,43 @@ function FeedbackForm() {
   }
 
   function handleSubmit(e) {
-    e.preventDefault();
     setSubmit(!submit);
     console.log(submit);
   }
 
-  const loadData = async () => {
-    const response = await fetch("https://campfire-project.herokuapp.com/all");
-    const data = await response.json();
-    console.log(data);
-  };
+  //Below - code structure for posting to database
 
-  useEffect(() => {
-    loadData();
-  }, [submit]);
+  // const testob = {
+  //   bc_name: "Mike Smith",
+  //   day_title: "React and Postgres",
+  //   day_rating: 3,
+  //   feedback: "Had a jolly old time",
+  //   reflection: "Looks good",
+  //   emotion: 5,
+  // };
+
+  // const loadData = async () => {
+  //   const response = await fetch("https://campfire-project.herokuapp.com/all", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(testob),
+  //   });
+  //   const data = await response.json();
+  //   console.log(data);
+  // };
+
+  // useEffect(() => {
+  //   loadData();
+  // }, [submit]);
 
   return (
     <main>
       <DaysTitle handleTitle={(e) => handleTitle(e.target.value)} />
       <DayBar handleDayRating={(e) => handleDayRating(e.target.value)} />
-      <QuestionCard />
-      <QuestionCard />
+      <FeedbackCard />
+      <ReflectCard />
       <MoodBar />
       <SubmitButton handleSubmit={(e) => handleSubmit(e)} />
     </main>

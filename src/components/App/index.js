@@ -4,9 +4,6 @@ import Footer from "../Footer";
 import Dashboard from "../Dashboard";
 import DaysTitle from "../DaysTitle";
 import FeedbackForm from "../FeedbackForm";
-import QuestionCard from "../QuestionCard";
-
-import SubmitButton from "../SubmitButton";
 
 import "./index.css";
 
