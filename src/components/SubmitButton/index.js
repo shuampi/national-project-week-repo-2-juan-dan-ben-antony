@@ -1,7 +1,11 @@
 import React from "react";
 
 function SubmitButton() {
-  return <div></div>;
+  return (
+    <div>
+      <button>SUBMIT</button>
+    </div>
+  );
 }
 
 export default SubmitButton;

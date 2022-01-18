@@ -14,6 +14,7 @@ function App() {
   return (
     <div>
       <Header />
+      <FeedbackForm />
       <Footer />
     </div>
   );
