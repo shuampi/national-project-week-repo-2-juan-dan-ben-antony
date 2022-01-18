@@ -1,11 +1,12 @@
 import React from "react";
 
-function FeedbackCard() {
+function FeedbackCard({ handleFeedback }) {
   return (
     <div className="feedback-card">
       <p>What went well / not so well today and why?</p>
       <form id="input-form" className="flexContainer">
         <input
+          onChange={handleFeedback}
           type="text"
           id="input-field"
           placeholder="Select from below, type or hold down mic to speak"

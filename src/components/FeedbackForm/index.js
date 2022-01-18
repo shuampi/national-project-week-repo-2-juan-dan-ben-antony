@@ -11,6 +11,7 @@ function FeedbackForm() {
   const [title, setTitle] = useState("");
   const [dayrating, setDayRating] = useState(5);
   const [submit, setSubmit] = useState(false);
+  const [feedback, setFeedback] = useState("");
 
   function handleTitle(e) {
     setTitle(e);
@@ -25,6 +26,11 @@ function FeedbackForm() {
   function handleSubmit(e) {
     setSubmit(!submit);
     console.log(submit);
+  }
+
+  function handleFeedback(e) {
+    setFeedback(e);
+    console.log(`Feedback: ${feedback}`);
   }
 
   //Below - code structure for posting to database
@@ -58,7 +64,7 @@ function FeedbackForm() {
     <main>
       <DaysTitle handleTitle={(e) => handleTitle(e.target.value)} />
       <DayBar handleDayRating={(e) => handleDayRating(e.target.value)} />
-      <FeedbackCard />
+      <FeedbackCard handleFeedback={(e) => handleFeedback(e.target.value)} />
       <ReflectCard />
       <MoodBar />
       <SubmitButton handleSubmit={(e) => handleSubmit(e)} />
