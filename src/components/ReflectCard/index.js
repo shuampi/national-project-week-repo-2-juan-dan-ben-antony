@@ -1,11 +1,12 @@
 import React from "react";
 
-function ReflectCard() {
+function ReflectCard({ handleReflect }) {
   return (
     <div className="reflect-card">
       <p>Reflect on your experience today:</p>
       <form id="input-form" className="flexContainer">
         <input
+          onChange={handleReflect}
           type="text"
           id="input-field"
           placeholder="Select from below, type or hold down mic to speak"

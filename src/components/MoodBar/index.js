@@ -1,6 +1,6 @@
 import React from "react";
 
-function MoodBar({ handleMoodRating }) {
+function MoodBar({ handleMood }) {
   return (
     <div className="mood-slider">
       <h3>Rate your mood today</h3>
@@ -9,7 +9,7 @@ function MoodBar({ handleMoodRating }) {
         min="1"
         max="5"
         // value="50" - needs to be onChange to work correctly
-        onChange={handleMoodRating}
+        onChange={handleMood}
         className="slider"
         id="myRange"
       />
