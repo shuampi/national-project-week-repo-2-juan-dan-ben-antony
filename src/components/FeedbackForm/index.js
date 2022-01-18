@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import DaysTitle from "../DaysTitle";
 import QuestionCard from "../QuestionCard";
 
@@ -10,6 +10,7 @@ import DayBar from "../DayBar";
 function FeedbackForm() {
   const [title, setTitle] = useState("");
   const [dayrating, setDayRating] = useState(5);
+  const [submit, setSubmit] = useState(false);
 
   function handleTitle(e) {
     setTitle(e);
@@ -21,6 +22,22 @@ function FeedbackForm() {
     console.log(`Day rating: ${dayrating}`);
   }
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    setSubmit(!submit);
+    console.log(submit);
+  }
+
+  const loadData = async () => {
+    const response = await fetch("https://campfire-project.herokuapp.com/all");
+    const data = await response.json();
+    console.log(data);
+  };
+
+  useEffect(() => {
+    loadData();
+  }, [submit]);
+
   return (
     <main>
       <DaysTitle handleTitle={(e) => handleTitle(e.target.value)} />
@@ -28,7 +45,7 @@ function FeedbackForm() {
       <QuestionCard />
       <QuestionCard />
       <MoodBar />
-      <SubmitButton />
+      <SubmitButton handleSubmit={(e) => handleSubmit(e)} />
     </main>
   );
 }
