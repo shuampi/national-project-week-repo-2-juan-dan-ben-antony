@@ -2,9 +2,10 @@ import React from "react";
 
 function Header() {
   return (
-    <div>
-      <h1>Header</h1>
-    </div>
+    <nav>
+      <img className="camp-fire-logo" alt="camp-fire-logo" />
+      <h4 className="bootcamper-name">Hello Boot Camperson</h4>
+    </nav>
   );
 }
 

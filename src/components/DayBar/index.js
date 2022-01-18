@@ -1,9 +1,9 @@
 import React from "react";
 
-function RatingsBar({ handleDayRating }) {
+function DayBar({ handleDayRating }) {
   return (
-    <div>
-      <h3>Question for slider</h3>
+    <div className="day-slider">
+      <h3>Rate your experience</h3>
       <input
         type="range"
         min="1"
@@ -17,4 +17,4 @@ function RatingsBar({ handleDayRating }) {
   );
 }
 
-export default RatingsBar;
+export default DayBar;

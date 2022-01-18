@@ -2,9 +2,9 @@ import React from "react";
 
 function Footer() {
   return (
-    <div>
-      <h1>Footer</h1>
-    </div>
+    <footer>
+      <h4>© 2022 The School of Code</h4>
+    </footer>
   );
 }
 

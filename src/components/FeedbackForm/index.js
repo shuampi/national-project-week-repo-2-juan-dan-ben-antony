@@ -1,9 +1,11 @@
 import React from "react";
 import DaysTitle from "../DaysTitle";
 import QuestionCard from "../QuestionCard";
-import RatingsBar from "../RatingsBar";
+
 import SubmitButton from "../SubmitButton";
 import { useState } from "react";
+import MoodBar from "../MoodBar";
+import DayBar from "../DayBar";
 
 function FeedbackForm() {
   const [title, setTitle] = useState("");
@@ -20,14 +22,14 @@ function FeedbackForm() {
   }
 
   return (
-    <div>
+    <main>
       <DaysTitle handleTitle={(e) => handleTitle(e.target.value)} />
-      <RatingsBar handleDayRating={(e) => handleDayRating(e.target.value)} />
+      <DayBar handleDayRating={(e) => handleDayRating(e.target.value)} />
       <QuestionCard />
       <QuestionCard />
-      <RatingsBar />
+      <MoodBar />
       <SubmitButton />
-    </div>
+    </main>
   );
 }
 

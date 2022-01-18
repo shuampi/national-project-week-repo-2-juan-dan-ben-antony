@@ -5,7 +5,7 @@ import Dashboard from "../Dashboard";
 import DaysTitle from "../DaysTitle";
 import FeedbackForm from "../FeedbackForm";
 import QuestionCard from "../QuestionCard";
-import RatingsBar from "../RatingsBar";
+
 import SubmitButton from "../SubmitButton";
 
 import "./index.css";
