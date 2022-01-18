@@ -4,16 +4,16 @@ function QuestionCard() {
   return (
     <div>
       <p>What went well and why?</p>
-      <form id="input-form" class="flexContainer">
+      <form id="input-form" className="flexContainer">
         <input
           type="text"
           id="input-field"
           placeholder="Select from below, type or hold down mic to speak"
-          autofocus
-          autocomplete="off"
+          autoFocus
+          autoComplete="off"
         />
         <button type="button" id="mic-btn">
-          <i class="fas fa-microphone"></i>
+          <i className="fas fa-microphone"></i>
         </button>
       </form>
       <div id="response-btn">

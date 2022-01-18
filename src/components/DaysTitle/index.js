@@ -1,10 +1,10 @@
 import React from "react";
 
-function DaysTitle() {
+function DaysTitle({ handleTitle }) {
   return (
     <div>
       <h3>Enter a title for today</h3>
-      <input></input>
+      <input onChange={handleTitle}></input>
     </div>
   );
 }
