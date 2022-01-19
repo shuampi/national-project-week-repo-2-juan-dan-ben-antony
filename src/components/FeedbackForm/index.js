@@ -26,6 +26,7 @@ function FeedbackForm() {
   }
 
   function handleSubmit(e) {
+    e.preventDefault();
     setSubmit(!submit);
     console.log(submit);
   }
@@ -45,6 +46,32 @@ function FeedbackForm() {
     console.log(`Mood: ${mood}`);
   }
 
+  const formPost = {
+    bc_name: "Boot Camperson",
+    day_title: title,
+    day_rating: dayrating,
+    feedback: feedback,
+    reflection: reflect,
+    emotion: mood,
+  };
+
+  const loadData = async () => {
+    const response = await fetch("https://campfire-project.herokuapp.com/all", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formPost),
+    });
+    const data = await response.json();
+    console.log(data);
+    console.log(formPost);
+  };
+
+  useEffect(() => {
+    loadData();
+  }, [submit]);
+
   return (
     <main>
       <DaysTitle handleTitle={(e) => handleTitle(e.target.value)} />
@@ -58,30 +85,3 @@ function FeedbackForm() {
 }
 
 export default FeedbackForm;
-
-//Below - code structure for posting to database
-
-// const testob = {
-//   bc_name: "Mike Smith",
-//   day_title: "React and Postgres",
-//   day_rating: 3,
-//   feedback: "Had a jolly old time",
-//   reflection: "Looks good",
-//   emotion: 5,
-// };
-
-// const loadData = async () => {
-//   const response = await fetch("https://campfire-project.herokuapp.com/all", {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify(testob),
-//   });
-//   const data = await response.json();
-//   console.log(data);
-// };
-
-// useEffect(() => {
-//   loadData();
-// }, [submit]);
