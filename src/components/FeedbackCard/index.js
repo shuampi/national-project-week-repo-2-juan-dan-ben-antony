@@ -1,11 +1,11 @@
 import React from "react";
 
-function handleSpeech() {
-  startButton();
-  console.log("speech button");
-}
+// function handleSpeech() {
+//   startButton();
+//   console.log("speech button");
+// }
 
-function FeedbackCard({ handleFeedback }, { handleSpeech }) {
+function FeedbackCard({ handleFeedback, handleClick, handleTag }) {
   return (
     <div className="feedback-card">
       <p>What went well / not so well today and why?</p>
@@ -19,79 +19,83 @@ function FeedbackCard({ handleFeedback }, { handleSpeech }) {
         </button>
       </form>
       <div id="response-btn">
-        <button id="response-1">blah blah blah blah 1</button>
+        <button onClick={handleClick} id="response-1">
+          Easy to follow lesson
+        </button>
         <button id="response-2">blah blah blah blah 2</button>
         <button id="response-3">blah blah blah blah 3</button>
         <button id="response-4">blah blah blah blah 4</button>
         <button id="response-5">blah blah blah blah 5</button>
         <button id="response-6">blah blah blah blah 6</button>
+        <button id="response-7">blah blah blah blah 7</button>
+        <button id="response-8">blah blah blah blah 8</button>
       </div>
     </div>
   );
 }
 
-let final_transcript = "";
-let recognizing = false;
+// let final_transcript = "";
+// let recognizing = false;
 
-const start_button = document.getElementById("mic-btn");
-const final_span = document.getElementById("final_span");
-const interim_span = document.getElementById("interim_span");
+// const start_button = document.getElementById("mic-btn");
+// const final_span = document.getElementById("final_span");
+// const interim_span = document.getElementById("interim_span");
 
-//start_button.style.display = "inline-block";
+// //start_button.style.display = "inline-block";
 
-const SpeechRecognition =
-  window.SpeechRecognition || window.webkitSpeechRecognition;
-const recognition = new SpeechRecognition();
+// const SpeechRecognition =
+//   window.SpeechRecognition || window.webkitSpeechRecognition;
+// const recognition = new SpeechRecognition();
 
-recognition.continuous = true;
-recognition.interimResults = true;
+// recognition.continuous = true;
+// recognition.interimResults = true;
 
-recognition.onstart = function () {
-  recognizing = true;
-};
+// recognition.onstart = function () {
+//   recognizing = true;
+// };
 
-recognition.onresult = function (event) {
-  let interim_transcript = "";
+// recognition.onresult = function (event) {
+//   let interim_transcript = "";
 
-  for (let i = event.resultIndex; i < event.results.length; ++i) {
-    if (event.results[i].isFinal) {
-      final_transcript += event.results[i][0].transcript;
-    } else {
-      interim_transcript += event.results[i][0].transcript;
-    }
-  }
-  final_transcript = capitalize(final_transcript);
+//   for (let i = event.resultIndex; i < event.results.length; ++i) {
+//     if (event.results[i].isFinal) {
+//       final_transcript += event.results[i][0].transcript;
+//     } else {
+//       interim_transcript += event.results[i][0].transcript;
+//     }
+//   }
+//   final_transcript = capitalize(final_transcript);
 
-  //final_span.value = linebreak(interim_transcript);
-  final_span.value = linebreak(final_transcript);
-  interim_span.innerHTML = linebreak(interim_transcript);
-  console.log(linebreak(final_transcript));
-};
+//   //final_span.value = linebreak(interim_transcript);
+//   final_span.value = linebreak(final_transcript);
+//   interim_span.innerHTML = linebreak(interim_transcript);
+//   console.log(linebreak(final_transcript));
+// };
 
-let two_line = /\n\n/g;
-let one_line = /\n/g;
-function linebreak(s) {
-  return s.replace(two_line, "<p></p>").replace(one_line, "<br>");
-}
+// let two_line = /\n\n/g;
+// let one_line = /\n/g;
+// function linebreak(s) {
+//   return s.replace(two_line, "<p></p>").replace(one_line, "<br>");
+// }
 
-let first_char = /\S/;
-function capitalize(s) {
-  return s.replace(first_char, function (m) {
-    return m.toUpperCase();
-  });
-}
+// let first_char = /\S/;
+// function capitalize(s) {
+//   return s.replace(first_char, function (m) {
+//     return m.toUpperCase();
+//   });
+// }
 
-function startButton(event) {
-  if (recognizing) {
-    recognition.stop();
-    return;
-  }
-  final_transcript = "";
-  recognition.start();
+// function startButton(event) {
+//   if (recognizing) {
+//     recognition.stop();
+//     return;
+//   }
+//   final_transcript = "";
+//   recognition.start();
 
-  //final_span.innerHTML = "";
-  interim_span.innerHTML = "";
-}
+//   //final_span.innerHTML = "";
+//   interim_span.innerHTML = "";
+// }
 
 export default FeedbackCard;
 

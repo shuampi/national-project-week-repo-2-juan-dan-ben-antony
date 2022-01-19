@@ -1,6 +1,6 @@
 import React from "react";
 
-function ReflectCard({ handleReflect }) {
+function ReflectCard({ handleReflect, handleClick }) {
   return (
     <div className="reflect-card">
       <p>Reflect on your experience today:</p>
@@ -18,7 +18,11 @@ function ReflectCard({ handleReflect }) {
         </button>
       </form>
       <div id="response-btn">
-        <button style={{ backgroundColor: "green" }} id="response-1">
+        <button
+          onClick={handleClick}
+          style={{ backgroundColor: "green" }}
+          id="response-1"
+        >
           Worked well with my team
         </button>
         <button style={{ backgroundColor: "green" }} id="response-2">

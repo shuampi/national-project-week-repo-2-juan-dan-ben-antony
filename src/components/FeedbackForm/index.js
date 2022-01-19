@@ -15,8 +15,7 @@ function FeedbackForm() {
   const [feedback, setFeedback] = useState();
   const [reflect, setReflect] = useState();
   const [mood, setMood] = useState(5);
-
-  const testVariable = "branch";
+  const [tag, setTag] = useState("");
 
   function handleTitle(e) {
     setTitle(e);
@@ -51,6 +50,28 @@ function FeedbackForm() {
   function handleMood(e) {
     setMood(e);
     console.log(`Mood: ${mood}`);
+  }
+
+  function handleClick(e) {
+    const buttonText = e.target.innerHTML;
+    console.log(buttonText);
+    setTag(buttonText);
+    console.log(tag);
+    // define a variable that contains the inner text of the button
+    // const inputValue = document.getElementById("final_span");
+    // const buttonText = e.target.innerHTML;
+    // console.log(buttonText);
+    // let inputValueText = inputValue.value;
+    // inputValueText = inputValueText + buttonText;
+    // text value = input.value
+    //let inputValue =
+    //input.value = input.value + variable
+    //inputValue = inputValue + buttonText
+    // hand this function into onClick
+  }
+
+  function handleTag(e) {
+    return "Data in the input box";
   }
 
   const formPost = {
@@ -88,7 +109,13 @@ function FeedbackForm() {
       </nav>
       <DaysTitle handleTitle={(e) => handleTitle(e.target.value)} />
       <DayBar handleDayRating={(e) => handleDayRating(e.target.value)} />
-      <FeedbackCard handleFeedback={(e) => handleFeedback(e.target.value)} />
+      <FeedbackCard
+        handleTag={(e) => {
+          handleTag(e.target.value);
+        }}
+        handleClick={handleClick}
+        handleFeedback={(e) => handleFeedback(e.target.value)}
+      />
       <ReflectCard handleReflect={(e) => handleReflect(e.target.value)} />
       <MoodBar handleMood={(e) => handleMood(e.target.value)} />
       <SubmitButton handleSubmit={(e) => handleSubmit(e)} />
