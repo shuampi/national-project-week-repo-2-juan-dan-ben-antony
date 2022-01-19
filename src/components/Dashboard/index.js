@@ -1,8 +1,7 @@
 import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
-import Header from "../Header";
 import Profile from "../Profile";
-import Chart from "../Chart";
+import DashboardDisplayContainer from "../DashboardDisplayContainer";
 import "./index.css";
 
 function Dashboard() {
@@ -12,9 +11,11 @@ function Dashboard() {
         <Link to="/dashboard">About</Link>
       </nav>
       <Profile />
-      <Chart />
+      <DashboardDisplayContainer />
     </main>
   );
 }
 
 export default Dashboard;
+
+// changed above to dashboard container so athe the changes in display can be taken care of in there

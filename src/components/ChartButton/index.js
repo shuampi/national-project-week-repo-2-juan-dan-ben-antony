@@ -7,7 +7,6 @@ function ChartButton({ weekDay }) {
   return (
     <div className="chartButton">
       <h3>{weekDay}</h3>
-     <a> More info</a>
     </div>
   );
 }
