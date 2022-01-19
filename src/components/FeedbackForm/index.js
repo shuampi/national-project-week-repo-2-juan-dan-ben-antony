@@ -15,6 +15,8 @@ function FeedbackForm() {
   const [reflect, setReflect] = useState("");
   const [mood, setMood] = useState(5);
 
+  const testVariable = "branch";
+
   function handleTitle(e) {
     setTitle(e);
     console.log(`Page title: ${title}`);
