@@ -12,6 +12,7 @@ function FeedbackCard({ handleFeedback, handleClick, feedbackState }) {
       <form id="input-form" className="flexContainer">
         <div id="results">
           <input
+            size="150"
             value={feedbackState}
             onChange={handleFeedback}
             className="final"
@@ -25,17 +26,29 @@ function FeedbackCard({ handleFeedback, handleClick, feedbackState }) {
       </form>
       <div id="response-btn">
         <button onClick={handleClick} id="response-1">
-          Easy to follow lesson:
+          Easy to follow lesson.
         </button>
         <button onClick={handleClick} id="response-2">
-          Good time with team
+          Exciting energiser!
         </button>
-        <button id="response-3">blah blah blah blah 3</button>
-        <button id="response-4">blah blah blah blah 4</button>
-        <button id="response-5">blah blah blah blah 5</button>
-        <button id="response-6">blah blah blah blah 6</button>
-        <button id="response-7">blah blah blah blah 7</button>
-        <button id="response-8">blah blah blah blah 8</button>
+        <button onClick={handleClick} id="response-3">
+          Coaches provided good support
+        </button>
+        <button onClick={handleClick} id="response-4">
+          Workshop was clear and well structured
+        </button>
+        <button onClick={handleClick} id="response-5">
+          Difficulty tracking down a coach
+        </button>
+        <button onClick={handleClick} id="response-6">
+          Lesson was difficult to follow
+        </button>
+        <button onClick={handleClick} id="response-7">
+          Problems with setting up:{" "}
+        </button>
+        <button onClick={handleClick} id="response-8">
+          Had some questions I couldn't get answered
+        </button>
       </div>
     </div>
   );

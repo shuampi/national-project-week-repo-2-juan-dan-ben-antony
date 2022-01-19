@@ -12,8 +12,8 @@ function FeedbackForm() {
   const [title, setTitle] = useState();
   const [dayrating, setDayRating] = useState(5);
   const [submit, setSubmit] = useState(false);
-  const [feedback, setFeedback] = useState([]);
-  const [reflect, setReflect] = useState();
+  const [feedback, setFeedback] = useState("");
+  const [reflect, setReflect] = useState("");
   const [mood, setMood] = useState(5);
 
   function handleTitle(e) {
@@ -29,8 +29,8 @@ function FeedbackForm() {
   function handleSubmit(e) {
     e.preventDefault();
     console.log(feedback);
-    if (feedback === typeof Array) {
-      let arrayText = [...feedback].splice(0);
+    if (Array.isArray(feedback)) {
+      let arrayText = feedback[0];
       setFeedback(arrayText);
       console.log(feedback);
     }
@@ -58,13 +58,16 @@ function FeedbackForm() {
     console.log(`Mood: ${mood}`);
   }
 
-  function handleClick(e) {
+  function handleFeedClick(e) {
     const buttonText = e.target.innerHTML;
-    setFeedback([feedback + buttonText]);
-    if (feedback === typeof Array) {
-      setFeedback(feedback[0]);
-    }
+    setFeedback(feedback + " " + buttonText);
     console.log(feedback);
+  }
+
+  function handleReflectClick(e) {
+    const buttonText = e.target.innerHTML;
+    setReflect(reflect + " " + buttonText);
+    console.log(reflect);
   }
 
   const formPost = {
@@ -105,11 +108,17 @@ function FeedbackForm() {
       <FeedbackCard
         handleFeedback={(e) => handleFeedback(e.target.value)}
         handleClick={(e) => {
-          handleClick(e);
+          handleFeedClick(e);
         }}
         feedbackState={feedback}
       />
-      <ReflectCard handleReflect={(e) => handleReflect(e.target.value)} />
+      <ReflectCard
+        reflectState={reflect}
+        handleClick={(e) => {
+          handleReflectClick(e);
+        }}
+        handleReflect={(e) => handleReflect(e.target.value)}
+      />
       <MoodBar handleMood={(e) => handleMood(e.target.value)} />
       <SubmitButton handleSubmit={(e) => handleSubmit(e)} />
     </main>

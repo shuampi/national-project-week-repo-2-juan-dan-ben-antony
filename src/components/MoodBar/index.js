@@ -1,6 +1,6 @@
 import React from "react";
 
-function MoodBar({ handleMood }) {
+function MoodBar({ handleMood, emoji }) {
   return (
     <div className="mood-slider">
       <h3>Rate your mood today</h3>
@@ -13,6 +13,7 @@ function MoodBar({ handleMood }) {
         className="slider"
         id="myRange"
       />
+      <p>{emoji}</p>
     </div>
   );
 }
