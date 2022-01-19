@@ -6,6 +6,7 @@ import SubmitButton from "../SubmitButton";
 import { useState } from "react";
 import MoodBar from "../MoodBar";
 import DayBar from "../DayBar";
+import { Routes, Route, Link } from "react-router-dom";
 
 function FeedbackForm() {
   const [title, setTitle] = useState("");
@@ -74,6 +75,9 @@ function FeedbackForm() {
 
   return (
     <main>
+      <nav>
+        <Link to="/form">Feedback Form</Link>
+      </nav>
       <DaysTitle handleTitle={(e) => handleTitle(e.target.value)} />
       <DayBar handleDayRating={(e) => handleDayRating(e.target.value)} />
       <FeedbackCard handleFeedback={(e) => handleFeedback(e.target.value)} />
