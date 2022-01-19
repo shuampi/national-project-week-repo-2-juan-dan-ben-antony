@@ -9,12 +9,12 @@ import DayBar from "../DayBar";
 import { Routes, Route, Link } from "react-router-dom";
 
 function FeedbackForm() {
-  const [title, setTitle] = useState("");
-  const [dayrating, setDayRating] = useState(5);
+  const [title, setTitle] = useState();
+  const [dayrating, setDayRating] = useState();
   const [submit, setSubmit] = useState(false);
-  const [feedback, setFeedback] = useState("");
-  const [reflect, setReflect] = useState("");
-  const [mood, setMood] = useState(5);
+  const [feedback, setFeedback] = useState();
+  const [reflect, setReflect] = useState();
+  const [mood, setMood] = useState();
 
   const testVariable = "branch";
 
@@ -72,8 +72,21 @@ function FeedbackForm() {
   };
 
   useEffect(() => {
-    loadData();
+    // if there is content the use effect
+    // dayrating, feedback, reflect, mood
+
+    if (title !== undefined) {
+      loadData();
+      //this.title.value = "";
+    }
   }, [submit]);
+
+  // const [title, setTitle] = useState();
+  // const [dayrating, setDayRating] = useState();
+  // const [submit, setSubmit] = useState(false);
+  // const [feedback, setFeedback] = useState();
+  // const [reflect, setReflect] = useState();
+  // const [mood, setMood] = useState();
 
   return (
     <main>
