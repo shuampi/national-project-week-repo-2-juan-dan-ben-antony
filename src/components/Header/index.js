@@ -1,4 +1,5 @@
 import React from "react";
+//import flameLogo from "./components/images/flame-image.svg";
 
 function Header() {
   return (
