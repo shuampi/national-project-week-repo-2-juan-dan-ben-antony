@@ -1,5 +1,7 @@
 import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
+import Header from "../Header"
+import Profile from "../Profile";
 
 function Dashboard() {
   return (
@@ -7,6 +9,7 @@ function Dashboard() {
       <nav>
         <Link to="/dashboard">About</Link>
       </nav>
+      <Profile/>
     </main>
   );
 }
