@@ -5,13 +5,18 @@ import React from "react";
 //   console.log("speech button");
 // }
 
-function FeedbackCard({ handleFeedback, handleClick, handleTag }) {
+function FeedbackCard({ handleFeedback, handleClick, feedbackState }) {
   return (
     <div className="feedback-card">
       <p>What went well / not so well today and why?</p>
       <form id="input-form" className="flexContainer">
         <div id="results">
-          <input onChange={handleFeedback} className="final" id="final_span" />
+          <input
+            value={feedbackState}
+            onChange={handleFeedback}
+            className="final"
+            id="final_span"
+          />
           <span className="interim" id="interim_span"></span>
         </div>
         <button type="button" id="mic-btn">
@@ -22,7 +27,9 @@ function FeedbackCard({ handleFeedback, handleClick, handleTag }) {
         <button onClick={handleClick} id="response-1">
           Easy to follow lesson:
         </button>
-        <button id="response-2">blah blah blah blah 2</button>
+        <button onClick={handleClick} id="response-2">
+          Good time with team
+        </button>
         <button id="response-3">blah blah blah blah 3</button>
         <button id="response-4">blah blah blah blah 4</button>
         <button id="response-5">blah blah blah blah 5</button>

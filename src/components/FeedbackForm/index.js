@@ -12,7 +12,7 @@ function FeedbackForm() {
   const [title, setTitle] = useState();
   const [dayrating, setDayRating] = useState(5);
   const [submit, setSubmit] = useState(false);
-  const [feedback, setFeedback] = useState();
+  const [feedback, setFeedback] = useState([]);
   const [reflect, setReflect] = useState();
   const [mood, setMood] = useState(5);
 
@@ -28,6 +28,12 @@ function FeedbackForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    console.log(feedback);
+    if (feedback === typeof Array) {
+      let arrayText = [...feedback].splice(0);
+      setFeedback(arrayText);
+      console.log(feedback);
+    }
     if (title && reflect && feedback) {
       setSubmit(!submit);
     } else {
@@ -37,7 +43,8 @@ function FeedbackForm() {
   }
 
   function handleFeedback(e) {
-    setFeedback(e);
+    const spreadFeedback = [...feedback, e];
+    setFeedback(spreadFeedback[spreadFeedback.length - 1]);
     console.log(`Feedback: ${feedback}`);
   }
 
@@ -49,6 +56,15 @@ function FeedbackForm() {
   function handleMood(e) {
     setMood(e);
     console.log(`Mood: ${mood}`);
+  }
+
+  function handleClick(e) {
+    const buttonText = e.target.innerHTML;
+    setFeedback([feedback + buttonText]);
+    if (feedback === typeof Array) {
+      setFeedback(feedback[0]);
+    }
+    console.log(feedback);
   }
 
   const formPost = {
@@ -86,7 +102,13 @@ function FeedbackForm() {
       </nav>
       <DaysTitle handleTitle={(e) => handleTitle(e.target.value)} />
       <DayBar handleDayRating={(e) => handleDayRating(e.target.value)} />
-      <FeedbackCard handleFeedback={(e) => handleFeedback(e.target.value)} />
+      <FeedbackCard
+        handleFeedback={(e) => handleFeedback(e.target.value)}
+        handleClick={(e) => {
+          handleClick(e);
+        }}
+        feedbackState={feedback}
+      />
       <ReflectCard handleReflect={(e) => handleReflect(e.target.value)} />
       <MoodBar handleMood={(e) => handleMood(e.target.value)} />
       <SubmitButton handleSubmit={(e) => handleSubmit(e)} />
