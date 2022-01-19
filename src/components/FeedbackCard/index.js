@@ -11,10 +11,10 @@ function FeedbackCard({ handleFeedback }, { handleSpeech }) {
       <p>What went well / not so well today and why?</p>
       <form id="input-form" className="flexContainer">
         <div id="results">
-          <input className="final" id="final_span" />
+          <input onChange={handleFeedback} className="final" id="final_span" />
           <span className="interim" id="interim_span"></span>
         </div>
-        <button type="button" id="mic-btn" onChange={handleSpeech}>
+        <button type="button" id="mic-btn">
           <i className="fas fa-microphone"></i>
         </button>
       </form>

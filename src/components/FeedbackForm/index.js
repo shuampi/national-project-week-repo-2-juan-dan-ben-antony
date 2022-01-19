@@ -10,11 +10,11 @@ import { Routes, Route, Link } from "react-router-dom";
 
 function FeedbackForm() {
   const [title, setTitle] = useState();
-  const [dayrating, setDayRating] = useState();
+  const [dayrating, setDayRating] = useState(5);
   const [submit, setSubmit] = useState(false);
   const [feedback, setFeedback] = useState();
   const [reflect, setReflect] = useState();
-  const [mood, setMood] = useState();
+  const [mood, setMood] = useState(5);
 
   const testVariable = "branch";
 
@@ -30,7 +30,11 @@ function FeedbackForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    setSubmit(!submit);
+    if (title && reflect && feedback) {
+      setSubmit(!submit);
+    } else {
+      alert("Form not completed"); // replace alert with react function?
+    }
     console.log(submit);
   }
 
@@ -72,21 +76,10 @@ function FeedbackForm() {
   };
 
   useEffect(() => {
-    // if there is content the use effect
-    // dayrating, feedback, reflect, mood
-
-    if (title !== undefined) {
+    if (title && reflect && feedback) {
       loadData();
-      //this.title.value = "";
     }
   }, [submit]);
-
-  // const [title, setTitle] = useState();
-  // const [dayrating, setDayRating] = useState();
-  // const [submit, setSubmit] = useState(false);
-  // const [feedback, setFeedback] = useState();
-  // const [reflect, setReflect] = useState();
-  // const [mood, setMood] = useState();
 
   return (
     <main>
