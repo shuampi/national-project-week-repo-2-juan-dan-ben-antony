@@ -37,7 +37,7 @@ const start_button = document.getElementById("mic-btn");
 const final_span = document.getElementById("final_span");
 const interim_span = document.getElementById("interim_span");
 
-start_button.style.display = "inline-block";
+//start_button.style.display = "inline-block";
 
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
