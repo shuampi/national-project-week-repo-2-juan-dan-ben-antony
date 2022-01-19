@@ -20,7 +20,7 @@ function FeedbackCard({ handleFeedback, handleClick, handleTag }) {
       </form>
       <div id="response-btn">
         <button onClick={handleClick} id="response-1">
-          Easy to follow lesson
+          Easy to follow lesson:
         </button>
         <button id="response-2">blah blah blah blah 2</button>
         <button id="response-3">blah blah blah blah 3</button>
