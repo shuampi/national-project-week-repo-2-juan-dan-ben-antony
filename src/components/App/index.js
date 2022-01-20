@@ -13,7 +13,7 @@ function App() {
     <div>
       <Header />
       <Routes>
-        <Route path="form" element={<FeedbackForm />} />
+        <Route path="/" element={<FeedbackForm />} />
         <Route path="dashboard" element={<Dashboard />} />
       </Routes>
       <Footer />

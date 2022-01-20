@@ -8,6 +8,11 @@ import MoodBar from "../MoodBar";
 import DayBar from "../DayBar";
 import { Routes, Route, Link } from "react-router-dom";
 import Notes from "../Notes";
+import SpeechRecognition, {
+  useSpeechRecognition,
+} from "react-speech-recognition";
+
+const dayArray = ["monday", "tuesday", "wednesday", "thursday", "friday"];
 
 function FeedbackForm() {
   const [title, setTitle] = useState();
@@ -17,6 +22,13 @@ function FeedbackForm() {
   const [reflect, setReflect] = useState("");
   const [mood, setMood] = useState(5);
   const [notes, setNotes] = useState("");
+  const {
+    transcript,
+    listening,
+    resetTranscript,
+    browserSupportsSpeechRecognition,
+  } = useSpeechRecognition();
+  const [day, setDay] = useState(0);
 
   function handleTitle(e) {
     setTitle(e);
@@ -61,7 +73,7 @@ function FeedbackForm() {
   }
 
   function handleNotes(e) {
-    setNotes(e);
+    setNotes(transcript);
     console.log(`Notes: ${notes}`);
   }
 
@@ -77,14 +89,23 @@ function FeedbackForm() {
     console.log(reflect);
   }
 
+  function handleDay() {
+    setDay(day + 1);
+    if (day === 4) {
+      setDay(0);
+    }
+    console.log(day);
+  }
+
   const formPost = {
+    day: dayArray[day],
     bc_name: "Boot Camperson",
     day_title: title,
     day_rating: dayrating,
     feedback: feedback,
     reflection: reflect,
     emotion: mood,
-    notes: notes,
+    notes: transcript,
   };
 
   const loadData = async () => {
@@ -102,6 +123,7 @@ function FeedbackForm() {
 
   useEffect(() => {
     if (title && reflect && feedback) {
+      handleDay();
       loadData();
     }
   }, [submit]);
@@ -132,10 +154,13 @@ function FeedbackForm() {
         handleNotes={(e) => {
           handleNotes(e.target.value);
         }}
+        transcript={transcript}
+        listening={listening}
+        browserSupportsSpeechRecognition={browserSupportsSpeechRecognition}
       />
       <SubmitButton handleSubmit={(e) => handleSubmit(e)} />
     </main>
   );
 }
-//TESTTESTTESTTEST
+
 export default FeedbackForm;
