@@ -16,6 +16,7 @@ function FeedbackForm() {
   const [feedback, setFeedback] = useState("");
   const [reflect, setReflect] = useState("");
   const [mood, setMood] = useState(5);
+  const [notes, setNotes] = useState("");
 
   function handleTitle(e) {
     setTitle(e);
@@ -59,6 +60,11 @@ function FeedbackForm() {
     console.log(`Mood: ${mood}`);
   }
 
+  function handleNotes(e) {
+    setNotes(e);
+    console.log(`Notes: ${notes}`);
+  }
+
   function handleFeedClick(e) {
     const buttonText = e.target.innerHTML;
     setFeedback(feedback + " " + buttonText);
@@ -78,6 +84,7 @@ function FeedbackForm() {
     feedback: feedback,
     reflection: reflect,
     emotion: mood,
+    notes: notes,
   };
 
   const loadData = async () => {
@@ -121,7 +128,11 @@ function FeedbackForm() {
         handleReflect={(e) => handleReflect(e.target.value)}
       />
       <MoodBar handleMood={(e) => handleMood(e.target.value)} />
-      <Notes />
+      <Notes
+        handleNotes={(e) => {
+          handleNotes(e.target.value);
+        }}
+      />
       <SubmitButton handleSubmit={(e) => handleSubmit(e)} />
     </main>
   );

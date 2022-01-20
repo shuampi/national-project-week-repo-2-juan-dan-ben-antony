@@ -3,7 +3,7 @@ import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 
-function Notes() {
+function Notes({ handleNotes }) {
   const {
     transcript,
     listening,
@@ -22,6 +22,7 @@ function Notes() {
         size="150"
         value={transcript}
         placeholder="Press and hold Rec to record"
+        onChange={handleNotes}
       />
       <button
         type="button"
