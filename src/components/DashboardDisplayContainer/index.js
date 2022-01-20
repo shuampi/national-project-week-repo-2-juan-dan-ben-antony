@@ -2,27 +2,26 @@ import React from "react";
 import WeekChart from "../WeekChart";
 import WeekSearch from "../WeekSearch";
 import DayDisplay from "../DayDisplay";
-import {useState} from "react"
+import { useState } from "react";
 
 function DashboardDisplayContainer() {
-const [day,setDay]=useState("")
+  const [day, setDay] = useState("");
 
-async function getDayData(weekDay) {
-  const response = await fetch("https://campfire-project.herokuapp.com/all");
-  const data = await response.json();
+  async function getDayData(weekDay) {
+    const response = await fetch("https://campfire-project.herokuapp.com/all");
+    const data = await response.json();
 
-  const dayObj = data.payload.map((item, index) => {
-    if (item.day === weekDay) {
-      setDay(item);
-    }
-  });
-  console.log(dayObj);
-}
+    data.payload.map((item, index) => {
+      if (item.day === weekDay) {
+        setDay(item);
+      }
+    });
+  }
   return (
     <section>
-      <WeekChart getDayData={getDayData}/>
+      <WeekChart getDayData={getDayData} />
       <WeekSearch />
-      <DayDisplay day={day}/>
+      <DayDisplay day={day} />
     </section>
   );
 }

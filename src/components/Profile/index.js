@@ -1,25 +1,18 @@
 import React from "react";
-import {useState} from "react"
-  
-
-
-
+import { useState } from "react";
 
 function Profile() {
+  const [bootcamperName, setBootcamperName] = useState("");
+  const [numberOfReflections, setNumberOfReflections] = useState(0);
 
- const [bootcamperName, setBootcamperName]=useState("");
- const [numberOfReflections, setNumberOfReflections]=useState(0);
-
- 
- async function getBootcamperInfo (){
-  const response = await fetch ("https://campfire-project.herokuapp.com/all" )
-  const data = await response.json()
-  console.log(data)
-  setBootcamperName(data.payload[0].bc_name)
-  setNumberOfReflections(data.payload.length)
-  } 
+  async function getBootcamperInfo() {
+    const response = await fetch("https://campfire-project.herokuapp.com/all");
+    const data = await response.json();
+    setBootcamperName(data.payload[0].bc_name);
+    setNumberOfReflections(data.payload.length);
+  }
   getBootcamperInfo();
- 
+
   return (
     <div className="profile">
       <img

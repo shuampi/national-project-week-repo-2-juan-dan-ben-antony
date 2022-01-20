@@ -1,15 +1,18 @@
 /** @format */
 
-import React from "react";
+import React, { useState } from "react";
 import DayDisplay from "../DayDisplay";
 //it will take as props: day_title
 
-function ChartButton({ weekDay, getDayData }) {
-  
+function ChartButton({ weekDay, getDayData, style }) {
+  const buttonColor = {
+    backgroundColor: `${style}`,
+  };
 
   return (
     <div className="chartButton">
       <button
+        style={buttonColor}
         type="button"
         onClick={() => {
           getDayData(weekDay);

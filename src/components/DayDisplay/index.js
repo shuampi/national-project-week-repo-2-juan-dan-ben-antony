@@ -1,18 +1,16 @@
 import React from "react";
 
-
-
-
-function DayDisplay({day}) {
+function DayDisplay({ day }) {
   return (
     <div>
       <button>Back</button>
       <p>DAY OF WEEK</p>
       <h3>{day.day_title}</h3>
-      <p>{day.day_rating}</p>
-      <p>{}</p>
-      <p>REFLECTION</p>
-      <p>{day.emotion}</p>
+      <p>Day Rating: {day.day_rating}</p>
+      <p>Emotion: {day.emotion}</p>
+      <p>Reflection: {day.reflection}</p>
+      <p>Feedback: {day.feedback}</p>
+      <p>Notes: {day.notes}</p>
     </div>
   );
 }
