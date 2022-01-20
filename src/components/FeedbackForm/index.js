@@ -71,7 +71,7 @@ function FeedbackForm() {
 
   function handleNotes(e) {
     setNotes(e);
-    console.log(`Notes: ${notes}`);
+    console.log(`Notes: ${transcript}`);
   }
 
   function handleFeedClick(e) {

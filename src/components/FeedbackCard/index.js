@@ -12,7 +12,6 @@ function FeedbackCard({ handleFeedback, handleClick, feedbackState }) {
       <form id="input-form" className="flexContainer">
         <div id="results">
           <input
-            size="150"
             value={feedbackState}
             onChange={handleFeedback}
             className="final"
@@ -20,33 +19,30 @@ function FeedbackCard({ handleFeedback, handleClick, feedbackState }) {
           />
           <span className="interim" id="interim_span"></span>
         </div>
-        <button type="button" id="mic-btn">
-          <i className="fas fa-microphone"></i>
-        </button>
       </form>
       <div id="response-btn">
-        <button onClick={handleClick} id="response-1">
+        <button onClick={handleClick} id="response-1" class="pos-btn">
           Easy to follow lesson.
         </button>
-        <button onClick={handleClick} id="response-2">
+        <button onClick={handleClick} id="response-2" class="pos-btn">
           Exciting energiser!
         </button>
-        <button onClick={handleClick} id="response-3">
+        <button onClick={handleClick} id="response-3" class="pos-btn">
           Coaches provided good support
         </button>
-        <button onClick={handleClick} id="response-4">
+        <button onClick={handleClick} id="response-4" class="pos-btn">
           Workshop was clear and well structured
         </button>
-        <button onClick={handleClick} id="response-5">
+        <button onClick={handleClick} id="response-5" class="neg-btn">
           Difficulty tracking down a coach
         </button>
-        <button onClick={handleClick} id="response-6">
+        <button onClick={handleClick} id="response-6" class="neg-btn">
           Lesson was difficult to follow
         </button>
-        <button onClick={handleClick} id="response-7">
+        <button onClick={handleClick} id="response-7" class="neg-btn">
           Problems with setting up:{" "}
         </button>
-        <button onClick={handleClick} id="response-8">
+        <button onClick={handleClick} id="response-8" class="neg-btn">
           Had some questions I couldn't get answered
         </button>
       </div>
