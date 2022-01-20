@@ -5,15 +5,15 @@ import ChartButton from "../ChartButton";
 import DayDisplay from "../DayDisplay";
 import WeekSearch from "../WeekSearch";
 
-function WeekChart() {
+function WeekChart({ getDayData }) {
   return (
     <section>
       <div className="chartButtonContainer">
         <h1>Your current week</h1>
         <p>Click the day to retreive info</p>
         <div className="chartButtons">
-          <ChartButton weekDay="Monday" />
-          <ChartButton weekDay="Tuesday" />
+          <ChartButton weekDay="monday" />
+          <ChartButton weekDay="tuesday" />
           <ChartButton weekDay="Wednesday" />
           <ChartButton weekDay="Thursday" />
           <ChartButton weekDay="Friday" />

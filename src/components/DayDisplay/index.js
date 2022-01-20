@@ -1,23 +1,18 @@
 import React from "react";
 import dataBootcamper from "../../dashboardData";
-import {useState} from "react"
+import { useState } from "react";
+import ChartButton from "../ChartButton";
 
-
-
- 
-
-function DayDisplay({dayOfTheWeek}) {
-
-
+function DayDisplay(dayObj) {
   return (
     <div>
       <button>Back</button>
-      <p>{{dayOfTheWeek}}</p>
-      <h3>{dataBootcamper[0].day_title}</h3>
-      <p>{dataBootcamper[0].day_rating}</p>
-      <p>{dataBootcamper[0].feedback}</p>
-      <p> {dataBootcamper[0].reflection}</p>
-      <p>{dataBootcamper[0].emotion}</p>
+      <p>DAY OF WEEK</p>
+      <h3>TITLE</h3>
+      <p>RATING</p>
+      <p>FEEDBACK</p>
+      <p>REFLECTION</p>
+      <p>EMOTION</p>
     </div>
   );
 }
