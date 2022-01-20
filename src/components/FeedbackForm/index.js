@@ -12,6 +12,8 @@ import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 
+const dayArray = ["monday", "tuesday", "wednesday", "thursday", "friday"];
+
 function FeedbackForm() {
   const [title, setTitle] = useState();
   const [dayrating, setDayRating] = useState(5);
@@ -26,6 +28,7 @@ function FeedbackForm() {
     resetTranscript,
     browserSupportsSpeechRecognition,
   } = useSpeechRecognition();
+  const [day, setDay] = useState(0);
 
   function handleTitle(e) {
     setTitle(e);
@@ -71,7 +74,7 @@ function FeedbackForm() {
 
   function handleNotes(e) {
     setNotes(e);
-    console.log(`Notes: ${transcript}`);
+    console.log(`Notes: ${notes}`);
   }
 
   function handleFeedClick(e) {
@@ -86,7 +89,16 @@ function FeedbackForm() {
     console.log(reflect);
   }
 
+  function handleDay() {
+    setDay(day + 1);
+    if (day === 4) {
+      setDay(0);
+    }
+    console.log(day);
+  }
+
   const formPost = {
+    day: dayArray[day],
     bc_name: "Boot Camperson",
     day_title: title,
     day_rating: dayrating,
@@ -111,6 +123,7 @@ function FeedbackForm() {
 
   useEffect(() => {
     if (title && reflect && feedback) {
+      handleDay();
       loadData();
     }
   }, [submit]);
