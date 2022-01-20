@@ -1,6 +1,25 @@
 import React from "react";
+import {useState} from "react"
+  
+
+
+
 
 function Profile() {
+
+ const [bootcamperName, setBootcamperName]=useState("");
+ const [numberOfReflections, setNumberOfReflections]=useState(0);
+
+ 
+ async function getBootcamperInfo (){
+  const response = await fetch ("https://campfire-project.herokuapp.com/all" )
+  const data = await response.json()
+  console.log(data)
+  setBootcamperName(data.payload[0].bc_name)
+  setNumberOfReflections(data.payload.length)
+  } 
+  getBootcamperInfo();
+ 
   return (
     <div className="profile">
       <img
@@ -11,8 +30,8 @@ function Profile() {
 
       <div className="profile-info">
         <h1 id="welcome-back">Welcome back!</h1>
-        <h2 id="profile-name">Boot Camperson</h2>
-        <p>You are on week:5</p>
+        <h2 id="profile-name">{bootcamperName}</h2>
+        <p>You have done {numberOfReflections} reflections so far</p>
       </div>
     </div>
   );
