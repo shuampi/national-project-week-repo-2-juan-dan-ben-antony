@@ -6,7 +6,7 @@ import React from "react";
 function ChartButton({ weekDay }) {
   return (
     <div className="chartButton">
-    <button type="button"><h3>{weekDay}</h3></button>
+    <button type="button" onClick><h3>{weekDay}</h3></button>
     </div>
   );
 }
