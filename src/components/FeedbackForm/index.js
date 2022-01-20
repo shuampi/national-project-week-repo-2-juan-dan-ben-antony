@@ -14,6 +14,8 @@ import SpeechRecognition, {
 
 const dayArray = ["monday", "tuesday", "wednesday", "thursday", "friday"];
 
+const emojiArray = ["😰", "😟", "😐", "🙂", "😃"];
+
 function FeedbackForm() {
   const [title, setTitle] = useState();
   const [dayrating, setDayRating] = useState(5);
@@ -140,7 +142,10 @@ function FeedbackForm() {
         <Link to="/dashboard">Dashboard</Link>
       </nav>
       <DaysTitle handleTitle={(e) => handleTitle(e.target.value)} />
-      <DayBar handleDayRating={(e) => handleDayRating(e.target.value)} />
+      <DayBar
+        emoji={emojiArray[dayrating - 1]}
+        handleDayRating={(e) => handleDayRating(e.target.value)}
+      />
       <FeedbackCard
         handleFeedback={(e) => handleFeedback(e.target.value)}
         handleClick={(e) => {
@@ -155,7 +160,10 @@ function FeedbackForm() {
         }}
         handleReflect={(e) => handleReflect(e.target.value)}
       />
-      <MoodBar handleMood={(e) => handleMood(e.target.value)} />
+      <MoodBar
+        emoji={emojiArray[mood - 1]}
+        handleMood={(e) => handleMood(e.target.value)}
+      />
       <Notes
         resetTranscript={clearNotes}
         handleNotes={handleNotes}

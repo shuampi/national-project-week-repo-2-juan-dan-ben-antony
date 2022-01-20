@@ -1,9 +1,9 @@
 import React from "react";
 
-function DayBar({ handleDayRating }) {
+function DayBar({ handleDayRating, emoji }) {
   return (
     <div className="day-slider">
-      <h3>Rate your experience</h3>
+      <h3>{`Rate your experience: ${emoji}`}</h3>
       <input
         type="range"
         min="1"
