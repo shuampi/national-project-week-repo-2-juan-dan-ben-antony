@@ -1,0 +1,44 @@
+:root {
+  --background: #3b505c;
+  --nav-color: #eee2ae;
+}
+
+.dashboard {
+  background-color: var(--background);
+}
+
+.profile {
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+  background-color: var(--nav-color);
+  width: 60vw;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 3vh;
+}
+
+.profile-info {
+  background-color: var(--nav-color);
+}
+
+#profile-picture {
+  height: 30vh;
+  width: 30vh;
+  border-radius: 50%;
+  object-fit: cover;
+  border-style: solid;
+  border-width: 1vh;
+  border-color: black;
+}
+
+.chartButtonContainer {
+  background-color: var(--nav-color);
+  padding-top: 6vh;
+  padding-bottom: 6vh;
+  text-align: center;
+}
+
+.chartButtons {
+  display: flex;
+  justify-content: space-around;
+}
