@@ -1,15 +1,30 @@
 import React from "react";
+import dataBootcamper from "../../dashboardData";
+import {useState} from "react"
+
+
+
+ 
 
 function DayDisplay() {
+const [weekDay,setWeekDay]=useState("")
+
+  function getDayName(locale, dateStr)
+{
+    let date = new Date(dateStr);
+    setWeekDay(date.toLocaleDateString(locale, { weekday: 'long' }));        
+}
+  getDayName( "en-US",dataBootcamper[0].date);
+
   return (
     <div>
       <button>Back</button>
-      <p>Date</p>
-      <h3>Title</h3>
-      <p>Daybar</p>
-      <p>feedback</p>
-      <p> Reflection</p>
-      <p>Mood</p>
+      <p>{weekDay}</p>
+      <h3>{dataBootcamper[0].day_title}</h3>
+      <p>{dataBootcamper[0].day_rating}</p>
+      <p>{dataBootcamper[0].feedback}</p>
+      <p> {dataBootcamper[0].reflection}</p>
+      <p>{dataBootcamper[0].emotion}</p>
     </div>
   );
 }
