@@ -11,9 +11,13 @@ function Header() {
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
       />
-      <h4 className="bootcamper-name">Hello Boot Camperson</h4>
+      <a className="bootcamper-name" href="/dashboard">
+        Hello Boot Camperson
+      </a>
     </nav>
   );
 }
 
 export default Header;
+
+//<Link to="/dashboard">Dashboard</Link>

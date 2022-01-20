@@ -6,13 +6,15 @@ import SubmitButton from "../SubmitButton";
 import { useState } from "react";
 import MoodBar from "../MoodBar";
 import DayBar from "../DayBar";
-import { Routes, Route, Link } from "react-router-dom";
+import { useNavigate, Routes, Route, Link } from "react-router-dom";
 import Notes from "../Notes";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 
 const dayArray = ["monday", "tuesday", "wednesday", "thursday", "friday"];
+
+const emojiArray = ["😰", "😟", "😐", "🙂", "😃"];
 
 function FeedbackForm() {
   const [title, setTitle] = useState();
@@ -29,6 +31,7 @@ function FeedbackForm() {
     browserSupportsSpeechRecognition,
   } = useSpeechRecognition();
   const [day, setDay] = useState(0);
+  const navigate = useNavigate();
 
   function handleTitle(e) {
     setTitle(e);
@@ -72,9 +75,13 @@ function FeedbackForm() {
     console.log(`Mood: ${mood}`);
   }
 
-  function handleNotes(e) {
-    setNotes(transcript);
+  function handleNotes() {
+    setNotes(notes + "  " + transcript);
     console.log(`Notes: ${notes}`);
+  }
+
+  function clearNotes() {
+    setNotes("");
   }
 
   function handleFeedClick(e) {
@@ -105,7 +112,7 @@ function FeedbackForm() {
     feedback: feedback,
     reflection: reflect,
     emotion: mood,
-    notes: transcript,
+    notes: notes,
   };
 
   const loadData = async () => {
@@ -125,16 +132,17 @@ function FeedbackForm() {
     if (title && reflect && feedback) {
       handleDay();
       loadData();
+      navigate("/dashboard");
     }
   }, [submit]);
 
   return (
-    <main>
-      <nav>
-        <Link to="/form">Feedback Form</Link>
-      </nav>
+    <main className="main-content">
       <DaysTitle handleTitle={(e) => handleTitle(e.target.value)} />
-      <DayBar handleDayRating={(e) => handleDayRating(e.target.value)} />
+      <DayBar
+        emoji={emojiArray[dayrating - 1]}
+        handleDayRating={(e) => handleDayRating(e.target.value)}
+      />
       <FeedbackCard
         handleFeedback={(e) => handleFeedback(e.target.value)}
         handleClick={(e) => {
@@ -149,12 +157,14 @@ function FeedbackForm() {
         }}
         handleReflect={(e) => handleReflect(e.target.value)}
       />
-      <MoodBar handleMood={(e) => handleMood(e.target.value)} />
+      <MoodBar
+        emoji={emojiArray[mood - 1]}
+        handleMood={(e) => handleMood(e.target.value)}
+      />
       <Notes
-        handleNotes={(e) => {
-          handleNotes(e.target.value);
-        }}
-        transcript={transcript}
+        resetTranscript={clearNotes}
+        handleNotes={handleNotes}
+        transcript={notes}
         listening={listening}
         browserSupportsSpeechRecognition={browserSupportsSpeechRecognition}
       />
