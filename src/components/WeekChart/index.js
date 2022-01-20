@@ -12,7 +12,7 @@ function WeekChart({ getDayData }) {
         <h1>Your current week</h1>
         <p>Click the day to retreive info</p>
         <div className="chartButtons">
-          <ChartButton weekDay="monday" />
+          <ChartButton getDayData={getDayData} weekDay="monday" />
           <ChartButton weekDay="tuesday" />
           <ChartButton weekDay="Wednesday" />
           <ChartButton weekDay="Thursday" />
