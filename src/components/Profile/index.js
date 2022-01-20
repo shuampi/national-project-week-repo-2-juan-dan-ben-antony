@@ -30,7 +30,7 @@ function Profile() {
 
       <div>
         <h1>Motivational Quote of the day...</h1>
-        <h3>"I thought this was America"</h3>
+        <h3>"I'm sorry, I thought this was America"</h3>
       </div>
     </section>
   );
