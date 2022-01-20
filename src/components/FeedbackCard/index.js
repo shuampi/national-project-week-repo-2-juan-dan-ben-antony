@@ -17,19 +17,19 @@ function FeedbackCard({ handleFeedback, handleClick, feedbackState }) {
         </div>
       </form>
       <div id="response-btn">
-        <button onClick={handleClick} id="response-1" class="pos-btn">
+        <button onClick={handleClick} id="response-1" className="pos-btn">
           Easy to follow lesson.
         </button>
-        <button onClick={handleClick} id="response-2" class="pos-btn">
+        <button onClick={handleClick} id="response-2" className="pos-btn">
           Exciting energiser!
         </button>
-        <button onClick={handleClick} id="response-3" class="pos-btn">
+        <button onClick={handleClick} id="response-3" className="pos-btn">
           Coaches provided good support
         </button>
-        <button onClick={handleClick} id="response-4" class="pos-btn">
+        <button onClick={handleClick} id="response-4" className="pos-btn">
           Workshop was clear and well structured
         </button>
-        <button onClick={handleClick} id="response-5" class="neg-btn">
+        <button onClick={handleClick} id="response-5" className="neg-btn">
           Difficulty tracking down a coach
         </button>
         <button onClick={handleClick} id="response-6" class="neg-btn">

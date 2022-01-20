@@ -16,11 +16,11 @@ function Notes({
 
   return (
     <div className="container">
-      <p>Hold record to transcribe any extra thoughts or note you may have:</p>
+      <p>Hold record to transcribe any extra thoughts or notes you may have:</p>
       <input
         size="150"
         value={transcript}
-        placeholder="Press and hold Rec to record"
+        placeholder={`Hold "Record" and speak into your mic to transcribe.`}
       />
       <button
         type="button"
@@ -28,7 +28,7 @@ function Notes({
         onMouseUp={SpeechRecognition.stopListening}
         onClick={handleNotes}
       >
-        Rec
+        Record
       </button>
       <button className="reset-button" type="button" onClick={resetTranscript}>
         Reset
