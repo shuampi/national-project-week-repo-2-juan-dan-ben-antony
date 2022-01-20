@@ -2,7 +2,7 @@ import React from "react";
 
 function DaysTitle({ handleTitle }) {
   return (
-    <div>
+    <div className="container">
       <input
         class="title-input"
         onChange={handleTitle}

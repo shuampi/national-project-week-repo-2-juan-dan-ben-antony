@@ -137,10 +137,7 @@ function FeedbackForm() {
   }, [submit]);
 
   return (
-    <main>
-      <nav>
-        <Link to="/dashboard">Dashboard</Link>
-      </nav>
+    <main className="main-content">
       <DaysTitle handleTitle={(e) => handleTitle(e.target.value)} />
       <DayBar
         emoji={emojiArray[dayrating - 1]}

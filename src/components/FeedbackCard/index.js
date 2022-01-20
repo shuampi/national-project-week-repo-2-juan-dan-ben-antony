@@ -2,7 +2,7 @@ import React from "react";
 
 function FeedbackCard({ handleFeedback, handleClick, feedbackState }) {
   return (
-    <div className="main-content">
+    <div className="container">
       <p>What went well / not so well today and why?</p>
       <form id="input-form" className="flexContainer">
         <div id="results">

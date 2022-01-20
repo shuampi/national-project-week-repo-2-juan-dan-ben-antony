@@ -15,7 +15,7 @@ function Notes({
   }
 
   return (
-    <div>
+    <div className="container">
       <p>Hold record to transcribe any extra thoughts or note you may have:</p>
       <input
         size="150"

@@ -2,6 +2,7 @@ import React from "react";
 
 function ReflectCard({ handleReflect, handleClick, reflectState }) {
   return (
+    <div className="container">
     <div className="reflect-card">
       <p>Reflect on your experience today:</p>
       <form id="input-form" className="flexContainer">
@@ -41,6 +42,7 @@ function ReflectCard({ handleReflect, handleClick, reflectState }) {
           Missed time due to:
         </button>
       </div>
+    </div>
     </div>
   );
 }

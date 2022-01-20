@@ -4,12 +4,20 @@
   font-family: "Inter", sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  font-size: 20px;
+}
+
 #grid {
   display: grid;
   grid-template-areas:
     "h h h h"
     "l m m r"
     "f f f f";
+  grid-row-gap: 50px;
 }
 
 .header {
@@ -20,6 +28,7 @@
   align-items: center;
   justify-content: space-between;
   background-color: f9c74f;
+  height: 100px;
 }
 
 footer {
@@ -33,11 +42,21 @@ footer {
 }
 
 .main-content {
+  padding: 20px;
   display: grid;
   grid-row-start: m;
   grid-column-start: m;
   grid-row-end: m;
-  background-color: 577590;
+  background-color: #577590;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  align-items: center;
+  border-radius: 6px;
+  margin-bottom: 20px;
 }
 
 div {
@@ -45,6 +64,7 @@ div {
 }
 
 input {
+  border-color: white;
   border-radius: 5px;
   font-size: 16px;
   margin: 4px 2px;
@@ -55,7 +75,7 @@ input {
 .title-input {
   background-color: rgb(252, 236, 217);
   padding: 16px 32px;
-  border: none;
+  border-color: rgb(252, 236, 217);
 }
 
 .title-input::placeholder {
