@@ -4,8 +4,19 @@
   font-family: "Inter", sans-serif;
 }
 
-nav {
+#grid {
+  display: grid;
+  grid-template-areas:
+    "h h h h"
+    "l m m r"
+    "f f f f";
+}
+
+.header {
   display: flex;
+  grid-row-start: h;
+  grid-column-start: h;
+  grid-row-end: h;
   align-items: center;
   justify-content: space-between;
   background-color: f9c74f;
@@ -13,15 +24,19 @@ nav {
 
 footer {
   display: flex;
+  grid-row-start: f;
+  grid-column-start: f;
+  grid-row-end: f;
   align-items: center;
   background-color: f9c74f;
   justify-content: space-around;
 }
 
-main {
+.main-content {
   display: grid;
-
-  justify-content: space-around;
+  grid-row-start: m;
+  grid-column-start: m;
+  grid-row-end: m;
   background-color: 577590;
 }
 

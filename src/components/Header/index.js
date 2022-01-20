@@ -3,7 +3,7 @@ import { ReactComponent as FireSvg } from "../images/flame-image.svg";
 
 function Header() {
   return (
-    <nav>
+    <nav className="header">
       <FireSvg
         width="5%"
         height="5%"
