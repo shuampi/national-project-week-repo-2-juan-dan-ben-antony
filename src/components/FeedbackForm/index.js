@@ -6,7 +6,7 @@ import SubmitButton from "../SubmitButton";
 import { useState } from "react";
 import MoodBar from "../MoodBar";
 import DayBar from "../DayBar";
-import { Routes, Route, Link } from "react-router-dom";
+import { useNavigate, Routes, Route, Link } from "react-router-dom";
 import Notes from "../Notes";
 import SpeechRecognition, {
   useSpeechRecognition,
@@ -29,6 +29,7 @@ function FeedbackForm() {
     browserSupportsSpeechRecognition,
   } = useSpeechRecognition();
   const [day, setDay] = useState(0);
+  const navigate = useNavigate();
 
   function handleTitle(e) {
     setTitle(e);
@@ -129,6 +130,7 @@ function FeedbackForm() {
     if (title && reflect && feedback) {
       handleDay();
       loadData();
+      navigate("/dashboard");
     }
   }, [submit]);
 
