@@ -44,7 +44,7 @@ function WeekChart({ getDayData, data }) {
 
   return (
     <section>
-      <div className="chartButtonContainer">
+      <div className="container">
         <h1>Your current week</h1>
         <p>Click the day to retreive info</p>
         <div className="chartButtons">

@@ -1,13 +1,4 @@
-:root {
-  --background: #3b505c;
-  --nav-color: #eee2ae;
-}
-
-.dashboard {
-  background-color: var(--background);
-}
-
-.profile {
+/* .profile {
   padding-top: 3vh;
   padding-bottom: 3vh;
   background-color: var(--nav-color);
@@ -15,10 +6,9 @@
   display: flex;
   justify-content: space-around;
   margin-bottom: 3vh;
-}
-
-.profile-info {
-  background-color: var(--nav-color);
+} */
+.profile {
+  background-color: transparent;
 }
 
 #profile-picture {
@@ -29,16 +19,16 @@
   border-style: solid;
   border-width: 1vh;
   border-color: black;
+  background-color: violet;
 }
 
-.chartButtonContainer {
-  background-color: var(--nav-color);
+/* .chartButtonContainer {
   padding-top: 6vh;
   padding-bottom: 6vh;
   text-align: center;
-}
+} */
 
-.chartButtons {
+/* .chartButtons {
   display: flex;
   justify-content: space-around;
-}
+} */

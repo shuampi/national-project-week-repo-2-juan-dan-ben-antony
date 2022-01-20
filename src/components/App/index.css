@@ -30,8 +30,34 @@ a {
   grid-row-end: h;
   align-items: center;
   justify-content: space-between;
-  background-color: f9c74f;
+  background-color: bisque;
   height: 100px;
+}
+.container {
+  display: grid;
+  grid-template-columns: 2;
+  grid-template-rows: 10;
+
+  background-color: bisque;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  align-items: center;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+.flame-container {
+  display: inline;
+  background-color: none;
+  height: 80px;
+  width: auto;
+}
+
+.flame-logo {
+  position: absolute;
+  width: auto;
+  height: auto;
+  object-fit: cover;
 }
 
 footer {
@@ -40,7 +66,7 @@ footer {
   grid-column-start: f;
   grid-row-end: f;
   align-items: center;
-  background-color: f9c74f;
+  background-color: bisque;
   justify-content: space-around;
 }
 
@@ -53,22 +79,9 @@ footer {
   background-color: #577590;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-  align-items: center;
-  border-radius: 6px;
-  margin-bottom: 20px;
-}
-
-div {
-  background-color: bisque;
-}
-
 input {
   border-color: white;
-  border-radius: 5px;
+  border-radius: 10px;
   font-size: 16px;
   margin: 4px 2px;
   padding: 8px 16px;
@@ -114,7 +127,7 @@ input {
 }
 
 button {
-  border-radius: 6px;
+  border-radius: 10px;
 }
 
 button {

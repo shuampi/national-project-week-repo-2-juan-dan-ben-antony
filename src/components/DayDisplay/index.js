@@ -2,7 +2,7 @@ import React from "react";
 
 function DayDisplay({ day }) {
   return (
-    <div>
+    <div className="container">
       <button>Back</button>
       <p>DAY OF WEEK</p>
       <h3>{day.day_title}</h3>

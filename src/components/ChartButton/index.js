@@ -10,7 +10,7 @@ function ChartButton({ weekDay, getDayData, style }) {
   };
 
   return (
-    <div className="chartButton">
+    <div className="container">
       <button
         style={buttonColor}
         type="button"
