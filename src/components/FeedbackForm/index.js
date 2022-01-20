@@ -73,7 +73,7 @@ function FeedbackForm() {
   }
 
   function handleNotes(e) {
-    setNotes(e);
+    setNotes(transcript);
     console.log(`Notes: ${notes}`);
   }
 
