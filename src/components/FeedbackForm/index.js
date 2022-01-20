@@ -8,6 +8,9 @@ import MoodBar from "../MoodBar";
 import DayBar from "../DayBar";
 import { Routes, Route, Link } from "react-router-dom";
 import Notes from "../Notes";
+import SpeechRecognition, {
+  useSpeechRecognition,
+} from "react-speech-recognition";
 
 function FeedbackForm() {
   const [title, setTitle] = useState();
@@ -17,6 +20,12 @@ function FeedbackForm() {
   const [reflect, setReflect] = useState("");
   const [mood, setMood] = useState(5);
   const [notes, setNotes] = useState("");
+  const {
+    transcript,
+    listening,
+    resetTranscript,
+    browserSupportsSpeechRecognition,
+  } = useSpeechRecognition();
 
   function handleTitle(e) {
     setTitle(e);
@@ -84,7 +93,7 @@ function FeedbackForm() {
     feedback: feedback,
     reflection: reflect,
     emotion: mood,
-    notes: notes,
+    notes: transcript,
   };
 
   const loadData = async () => {
@@ -132,10 +141,13 @@ function FeedbackForm() {
         handleNotes={(e) => {
           handleNotes(e.target.value);
         }}
+        transcript={transcript}
+        listening={listening}
+        browserSupportsSpeechRecognition={browserSupportsSpeechRecognition}
       />
       <SubmitButton handleSubmit={(e) => handleSubmit(e)} />
     </main>
   );
 }
-//TESTTESTTESTTEST
+
 export default FeedbackForm;
