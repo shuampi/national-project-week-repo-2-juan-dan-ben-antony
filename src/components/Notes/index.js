@@ -16,23 +16,23 @@ function Notes({
 
   return (
     <div>
-      <p>Hit record to transcribe any extra thoughts or note you may have:</p>
+      <p>Hold record to transcribe any extra thoughts or note you may have:</p>
       <input
         size="150"
         value={transcript}
         placeholder="Press and hold Rec to record"
-        onChange={handleNotes}
       />
       <button
         type="button"
         onMouseDown={SpeechRecognition.startListening}
         onMouseUp={SpeechRecognition.stopListening}
+        onClick={handleNotes}
       >
         Rec
       </button>
-      {/* <button type="button" onClick={resetTranscript}>
+      <button className="reset-button" type="button" onClick={resetTranscript}>
         Reset
-      </button> */}
+      </button>
       <p>Microphone: {listening ? "on" : "off"}</p>
     </div>
   );

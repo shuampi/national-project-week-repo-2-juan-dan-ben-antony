@@ -10,7 +10,7 @@ function ReflectCard({ handleReflect, handleClick, reflectState }) {
           onChange={handleReflect}
           type="text"
           id="input-field"
-          placeholder="Select from below, type or hold down mic to speak"
+          placeholder="Select from below and / or type here..."
           autoFocus
           autoComplete="off"
         />

@@ -133,3 +133,12 @@ button {
 .submit-btn:hover {
   background-color: #4caf50;
 }
+
+.reset-button {
+  background-color: #f3722c;
+}
+
+.reset-button:hover {
+  background-color: #eb3508;
+  color: white;
+}

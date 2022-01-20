@@ -72,9 +72,13 @@ function FeedbackForm() {
     console.log(`Mood: ${mood}`);
   }
 
-  function handleNotes(e) {
-    setNotes(transcript);
+  function handleNotes() {
+    setNotes(notes + "  " + transcript);
     console.log(`Notes: ${notes}`);
+  }
+
+  function clearNotes() {
+    setNotes("");
   }
 
   function handleFeedClick(e) {
@@ -105,7 +109,7 @@ function FeedbackForm() {
     feedback: feedback,
     reflection: reflect,
     emotion: mood,
-    notes: transcript,
+    notes: notes,
   };
 
   const loadData = async () => {
@@ -131,7 +135,7 @@ function FeedbackForm() {
   return (
     <main>
       <nav>
-        <Link to="/form">Feedback Form</Link>
+        <Link to="/dashboard">Dashboard</Link>
       </nav>
       <DaysTitle handleTitle={(e) => handleTitle(e.target.value)} />
       <DayBar handleDayRating={(e) => handleDayRating(e.target.value)} />
@@ -151,10 +155,9 @@ function FeedbackForm() {
       />
       <MoodBar handleMood={(e) => handleMood(e.target.value)} />
       <Notes
-        handleNotes={(e) => {
-          handleNotes(e.target.value);
-        }}
-        transcript={transcript}
+        resetTranscript={clearNotes}
+        handleNotes={handleNotes}
+        transcript={notes}
         listening={listening}
         browserSupportsSpeechRecognition={browserSupportsSpeechRecognition}
       />
