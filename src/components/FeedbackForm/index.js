@@ -7,6 +7,7 @@ import { useState } from "react";
 import MoodBar from "../MoodBar";
 import DayBar from "../DayBar";
 import { Routes, Route, Link } from "react-router-dom";
+import Notes from "../Notes";
 
 function FeedbackForm() {
   const [title, setTitle] = useState();
@@ -120,6 +121,7 @@ function FeedbackForm() {
         handleReflect={(e) => handleReflect(e.target.value)}
       />
       <MoodBar handleMood={(e) => handleMood(e.target.value)} />
+      <Notes />
       <SubmitButton handleSubmit={(e) => handleSubmit(e)} />
     </main>
   );
