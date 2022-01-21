@@ -18,11 +18,11 @@ function DashboardDisplayContainer() {
     });
   }
   return (
-    <section>
+    <main>
       <WeekChart getDayData={getDayData} />
       <WeekSearch />
       <DayDisplay day={day} />
-    </section>
+    </main>
   );
 }
 

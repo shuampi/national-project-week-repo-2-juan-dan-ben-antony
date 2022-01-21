@@ -7,8 +7,16 @@
   justify-content: space-around;
   margin-bottom: 3vh;
 } */
+
 .profile {
+  display: inline-grid;
+  grid-template-columns: 2;
+  grid-template-rows: 1;
   background-color: transparent;
+  align-content: center;
+  justify-content: center;
+  color: whitesmoke;
+  /* display: grid; */
 }
 
 #profile-picture {
@@ -32,3 +40,29 @@
   display: flex;
   justify-content: space-around;
 } */
+
+.container-week {
+  display: grid;
+  grid-template-columns: 5;
+  grid-template-rows: 3;
+
+  background-color: bisque;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  align-items: center;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.week-chart {
+  display: inline-block;
+  grid-template-columns: 1;
+  grid-template-rows: 1;
+}
+
+.chartButtons {
+  display: block;
+  grid-template-columns: 5;
+  grid-template-rows: 1;
+}

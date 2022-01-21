@@ -39,25 +39,17 @@ a {
   grid-template-rows: 10;
 
   background-color: bisque;
-  display: flex;
   justify-content: center;
+  align-content: center;
   padding: 20px;
   align-items: center;
   border-radius: 20px;
   margin-bottom: 20px;
 }
-.flame-container {
-  display: inline;
-  background-color: none;
-  height: 80px;
-  width: auto;
-}
 
 .flame-logo {
-  position: absolute;
-  width: auto;
-  height: auto;
-  object-fit: cover;
+  width: 100px;
+  margin: auto;
 }
 
 footer {

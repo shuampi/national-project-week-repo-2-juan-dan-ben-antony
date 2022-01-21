@@ -1,4 +1,5 @@
 import React from "react";
+
 import flamelogo from "../images/campfire_flame.png";
 
 function Header() {
@@ -17,3 +18,4 @@ function Header() {
 export default Header;
 
 //<Link to="/dashboard">Dashboard</Link>
+//GiCampfire;

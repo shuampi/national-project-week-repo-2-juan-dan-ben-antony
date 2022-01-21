@@ -16,24 +16,32 @@ function Notes({
 
   return (
     <div className="container">
-      <p>Hold record to transcribe any extra thoughts or notes you may have:</p>
-      <input
-        size="150"
-        value={transcript}
-        placeholder={`Hold "Record" and speak into your mic to transcribe.`}
-      />
-      <button
-        type="button"
-        onMouseDown={SpeechRecognition.startListening}
-        onMouseUp={SpeechRecognition.stopListening}
-        onClick={handleNotes}
-      >
-        Record
-      </button>
-      <button className="reset-button" type="button" onClick={resetTranscript}>
-        Reset
-      </button>
-      <p>Microphone: {listening ? "on" : "off"}</p>
+      <div classname="voice-notes">
+        <p>
+          Hold record to transcribe any extra thoughts or notes you may have:
+        </p>
+        <input
+          size="150"
+          value={transcript}
+          placeholder={`Hold "Record" and speak into your mic to transcribe.`}
+        />
+        <button
+          type="button"
+          onMouseDown={SpeechRecognition.startListening}
+          onMouseUp={SpeechRecognition.stopListening}
+          onClick={handleNotes}
+        >
+          Record
+        </button>
+        <button
+          className="reset-button"
+          type="button"
+          onClick={resetTranscript}
+        >
+          Reset
+        </button>
+        <p>Microphone: {listening ? "on" : "off"}</p>
+      </div>
     </div>
   );
 }
