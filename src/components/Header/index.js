@@ -1,6 +1,6 @@
 import React from "react";
 
-import flamelogo from "../images/campfire_flame.png";
+import flamelogo from "../images/logo.png";
 
 function Header() {
   return (
