@@ -3,8 +3,7 @@ import React from "react";
 function DayDisplay({ day }) {
   return (
     <div className="container">
-      <button>Back</button>
-      <p>DAY OF WEEK</p>
+      <p>{day.day}</p>
       <h3>{day.day_title}</h3>
       <p>Day Rating: {day.day_rating}</p>
       <p>Emotion: {day.emotion}</p>

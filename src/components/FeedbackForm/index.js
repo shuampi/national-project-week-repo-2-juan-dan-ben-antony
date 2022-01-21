@@ -12,7 +12,7 @@ import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 
-const dayArray = ["monday", "tuesday", "wednesday", "thursday", "friday"];
+const dayArray = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 
 const emojiArray = ["😰", "😟", "😐", "🙂", "😃"];
 
@@ -30,7 +30,7 @@ function FeedbackForm() {
     resetTranscript,
     browserSupportsSpeechRecognition,
   } = useSpeechRecognition();
-  const [day, setDay] = useState(0);
+  const [day, setDay] = useState(1);
   const navigate = useNavigate();
 
   function handleTitle(e) {

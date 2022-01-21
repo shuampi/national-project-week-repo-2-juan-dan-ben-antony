@@ -25,15 +25,15 @@ function WeekChart({ getDayData, data }) {
     const response = await fetch("https://campfire-project.herokuapp.com/all");
     const data = await response.json();
     data.payload.map((item) => {
-      if (item.day === "monday") {
+      if (item.day === "Monday") {
         setMon(item.day_rating);
-      } else if (item.day === "tuesday") {
+      } else if (item.day === "Tuesday") {
         setTues(item.day_rating);
-      } else if (item.day === "wednesday") {
+      } else if (item.day === "Wednesday") {
         setWed(item.day_rating);
-      } else if (item.day === "thursday") {
+      } else if (item.day === "Thursday") {
         setThurs(item.day_rating);
-      } else if (item.day === "friday") {
+      } else if (item.day === "Friday") {
         setFri(item.day_rating);
       }
     });
@@ -52,27 +52,27 @@ function WeekChart({ getDayData, data }) {
           <ChartButton
             style={dayColors[mon - 1]}
             getDayData={getDayData}
-            weekDay="monday"
+            weekDay="Monday"
           />
           <ChartButton
             style={dayColors[tues - 1]}
             getDayData={getDayData}
-            weekDay="tuesday"
+            weekDay="Tuesday"
           />
           <ChartButton
             style={dayColors[wed - 1]}
             getDayData={getDayData}
-            weekDay="wednesday"
+            weekDay="Wednesday"
           />
           <ChartButton
             style={dayColors[thurs - 1]}
             getDayData={getDayData}
-            weekDay="thursday"
+            weekDay="Thursday"
           />
           <ChartButton
             style={dayColors[fri - 1]}
             getDayData={getDayData}
-            weekDay="friday"
+            weekDay="Friday"
           />
         </div>
       </div>
