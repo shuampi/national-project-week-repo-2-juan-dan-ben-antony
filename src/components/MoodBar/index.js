@@ -4,7 +4,7 @@ function MoodBar({ handleMood, emoji }) {
   return (
     <div className="container">
       <div className="mood-slider">
-        <h3>{`Rate your mood today: ${emoji}`}</h3>
+        <h3 className="emoji-icons">{`Rate your mood today: ${emoji}`}</h3>
         <input
           type="range"
           min="1"
