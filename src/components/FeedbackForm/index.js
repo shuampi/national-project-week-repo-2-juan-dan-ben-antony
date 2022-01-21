@@ -30,7 +30,7 @@ function FeedbackForm() {
     resetTranscript,
     browserSupportsSpeechRecognition,
   } = useSpeechRecognition();
-  const [day, setDay] = useState(1);
+  const [day, setDay] = useState(3);
   const navigate = useNavigate();
 
   function handleTitle(e) {
