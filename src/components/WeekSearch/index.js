@@ -3,8 +3,7 @@ import React from "react";
 function WeekSearch() {
   return (
     <div className="container">
-      <button>Back</button>
-      <p>Some kind of thing that will let you pick a week</p>
+      <button>Click here to view other weeks</button>
     </div>
   );
 }

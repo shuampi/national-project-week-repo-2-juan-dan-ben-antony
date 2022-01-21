@@ -75,7 +75,6 @@ function WeekChart({ getDayData, data }) {
             weekDay="friday"
           />
         </div>
-        <h3>Click here for other weeks</h3>
       </div>
     </div>
   );

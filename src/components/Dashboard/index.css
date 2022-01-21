@@ -20,6 +20,7 @@
 }
 
 #profile-picture {
+  justify-content: center;
   height: 30vh;
   width: 30vh;
   border-radius: 50%;
@@ -27,7 +28,10 @@
   border-style: solid;
   border-width: 1vh;
   border-color: black;
-  background-color: violet;
+}
+
+.profile-info {
+  color: aliceblue;
 }
 
 /* .chartButtonContainer {

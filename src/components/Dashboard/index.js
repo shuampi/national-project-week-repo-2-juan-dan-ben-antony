@@ -7,9 +7,6 @@ import "./index.css";
 function Dashboard() {
   return (
     <main className="main-content">
-      <nav>
-        <Link to="/dashboard">About</Link>
-      </nav>
       <Profile />
       <DashboardDisplayContainer />
     </main>
