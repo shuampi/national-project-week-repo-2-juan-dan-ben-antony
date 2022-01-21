@@ -11,14 +11,15 @@ const dayColors = [
   "#f9c74fff",
   "#90be6dff",
   "#43aa8bff",
+  "#7E7E81ff",
 ];
 
 function WeekChart({ getDayData, data }) {
-  const [mon, setMon] = useState();
-  const [tues, setTues] = useState();
-  const [wed, setWed] = useState();
-  const [thurs, setThurs] = useState();
-  const [fri, setFri] = useState();
+  const [mon, setMon] = useState(6);
+  const [tues, setTues] = useState(6);
+  const [wed, setWed] = useState(6);
+  const [thurs, setThurs] = useState(6);
+  const [fri, setFri] = useState(6);
 
   async function getRatingData() {
     const response = await fetch("https://campfire-project.herokuapp.com/all");

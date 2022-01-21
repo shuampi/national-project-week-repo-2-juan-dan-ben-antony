@@ -45,7 +45,6 @@
   display: grid;
   grid-template-columns: 5;
   grid-template-rows: 3;
-
   background-color: bisque;
   display: flex;
   justify-content: center;
@@ -62,7 +61,7 @@
 }
 
 .chartButtons {
-  display: block;
+  display: flex;
   grid-template-columns: 5;
   grid-template-rows: 1;
 }
