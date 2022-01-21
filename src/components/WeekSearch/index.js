@@ -2,7 +2,7 @@ import React from "react";
 
 function WeekSearch() {
   return (
-    <div>
+    <div className="container">
       <button>Back</button>
       <p>Some kind of thing that will let you pick a week</p>
     </div>

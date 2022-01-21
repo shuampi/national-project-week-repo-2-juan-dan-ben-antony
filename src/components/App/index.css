@@ -4,12 +4,23 @@
   font-family: "Inter", sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  font-size: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  align-content: center;
+}
+
 #grid {
   display: grid;
   grid-template-areas:
     "h h h h"
     "l m m r"
     "f f f f";
+  grid-row-gap: 50px;
 }
 
 .header {
@@ -19,7 +30,26 @@
   grid-row-end: h;
   align-items: center;
   justify-content: space-between;
-  background-color: f9c74f;
+  background-color: bisque;
+  height: 100px;
+}
+.container {
+  display: grid;
+  grid-template-columns: 2;
+  grid-template-rows: 10;
+
+  background-color: bisque;
+  justify-content: center;
+  align-content: center;
+  padding: 20px;
+  align-items: center;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.flame-logo {
+  width: 100px;
+  margin: auto;
 }
 
 footer {
@@ -28,24 +58,22 @@ footer {
   grid-column-start: f;
   grid-row-end: f;
   align-items: center;
-  background-color: f9c74f;
+  background-color: bisque;
   justify-content: space-around;
 }
 
 .main-content {
+  padding: 20px;
   display: grid;
   grid-row-start: m;
   grid-column-start: m;
   grid-row-end: m;
-  background-color: 577590;
-}
-
-div {
-  background-color: bisque;
+  background-color: #577590;
 }
 
 input {
-  border-radius: 5px;
+  border-color: white;
+  border-radius: 10px;
   font-size: 16px;
   margin: 4px 2px;
   padding: 8px 16px;
@@ -55,7 +83,7 @@ input {
 .title-input {
   background-color: rgb(252, 236, 217);
   padding: 16px 32px;
-  border: none;
+  border-color: rgb(252, 236, 217);
 }
 
 .title-input::placeholder {
@@ -91,7 +119,7 @@ input {
 }
 
 button {
-  border-radius: 6px;
+  border-radius: 10px;
 }
 
 button {
@@ -132,4 +160,17 @@ button {
 
 .submit-btn:hover {
   background-color: #4caf50;
+}
+
+.reset-button {
+  background-color: #f3722c;
+}
+
+.reset-button:hover {
+  background-color: #eb3508;
+  color: white;
+}
+
+.emoji-icons {
+  font-size: 80px;
 }

@@ -2,9 +2,9 @@ import React from "react";
 
 function DaysTitle({ handleTitle }) {
   return (
-    <div>
+    <div className="container">
       <input
-        class="title-input"
+        className="title-input"
         onChange={handleTitle}
         placeholder="Type here what you worked on today..."
       ></input>

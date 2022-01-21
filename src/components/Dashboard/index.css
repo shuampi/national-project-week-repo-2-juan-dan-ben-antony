@@ -1,13 +1,4 @@
-:root {
-  --background: #3b505c;
-  --nav-color: #eee2ae;
-}
-
-.dashboard {
-  background-color: var(--background);
-}
-
-.profile {
+/* .profile {
   padding-top: 3vh;
   padding-bottom: 3vh;
   background-color: var(--nav-color);
@@ -15,10 +6,17 @@
   display: flex;
   justify-content: space-around;
   margin-bottom: 3vh;
-}
+} */
 
-.profile-info {
-  background-color: var(--nav-color);
+.profile {
+  display: inline-grid;
+  grid-template-columns: 2;
+  grid-template-rows: 1;
+  background-color: transparent;
+  align-content: center;
+  justify-content: center;
+  color: whitesmoke;
+  /* display: grid; */
 }
 
 #profile-picture {
@@ -29,16 +27,42 @@
   border-style: solid;
   border-width: 1vh;
   border-color: black;
+  background-color: violet;
 }
 
-.chartButtonContainer {
-  background-color: var(--nav-color);
+/* .chartButtonContainer {
   padding-top: 6vh;
   padding-bottom: 6vh;
   text-align: center;
+} */
+
+/* .chartButtons {
+  display: flex;
+  justify-content: space-around;
+} */
+
+.container-week {
+  display: grid;
+  grid-template-columns: 5;
+  grid-template-rows: 3;
+
+  background-color: bisque;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  align-items: center;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.week-chart {
+  display: inline-block;
+  grid-template-columns: 1;
+  grid-template-rows: 1;
 }
 
 .chartButtons {
-  display: flex;
-  justify-content: space-around;
+  display: block;
+  grid-template-columns: 5;
+  grid-template-rows: 1;
 }

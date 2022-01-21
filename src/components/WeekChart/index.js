@@ -40,11 +40,15 @@ function WeekChart({ getDayData, data }) {
 
   useEffect(() => {
     getRatingData();
+<<<<<<< HEAD
   });
+=======
+  }, []);
+>>>>>>> main
 
   return (
-    <section>
-      <div className="chartButtonContainer">
+    <div className="container-week">
+      <div className="week-chart">
         <h1>Your current week</h1>
         <p>Click the day to retreive info</p>
         <div className="chartButtons">
@@ -76,7 +80,7 @@ function WeekChart({ getDayData, data }) {
         </div>
         <h3>Click here for other weeks</h3>
       </div>
-    </section>
+    </div>
   );
 }
 
