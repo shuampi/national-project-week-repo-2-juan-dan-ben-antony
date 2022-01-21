@@ -30,13 +30,13 @@ function FeedbackCard({ handleFeedback, handleClick, feedbackState }) {
           <button onClick={handleClick} id="response-5" className="neg-btn">
             Difficulty tracking down a coach
           </button>
-          <button onClick={handleClick} id="response-6" class="neg-btn">
+          <button onClick={handleClick} id="response-6" className="neg-btn">
             Lesson was difficult to follow
           </button>
-          <button onClick={handleClick} id="response-7" class="neg-btn">
+          <button onClick={handleClick} id="response-7" className="neg-btn">
             Problems with setting up:{" "}
           </button>
-          <button onClick={handleClick} id="response-8" class="neg-btn">
+          <button onClick={handleClick} id="response-8" className="neg-btn">
             Had some questions I couldn't get answered
           </button>
         </div>
