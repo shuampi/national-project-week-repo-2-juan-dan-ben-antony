@@ -5,6 +5,14 @@ import ChartButton from "../ChartButton";
 import DayDisplay from "../DayDisplay";
 import WeekSearch from "../WeekSearch";
 
+const dayColors = [
+  "#f94144ff",
+  "#f3722cff",
+  "#f9c74fff",
+  "#90be6dff",
+  "#43aa8bff",
+];
+
 function WeekChart({ getDayData, data }) {
   const [mon, setMon] = useState();
   const [tues, setTues] = useState();
@@ -33,14 +41,6 @@ function WeekChart({ getDayData, data }) {
   useEffect(() => {
     getRatingData();
   });
-
-  const dayColors = [
-    "#f94144ff",
-    "#f3722cff",
-    "#f9c74fff",
-    "#90be6dff",
-    "#43aa8bff",
-  ];
 
   return (
     <section>
