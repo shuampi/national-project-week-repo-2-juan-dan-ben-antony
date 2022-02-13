@@ -1,70 +1,25 @@
-# Getting Started with Create React App
+<img  width="50" height="50" style="float: left;"  src="./src/components/images/logo.png"> 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Campfire.
 
-## Available Scripts
+>An app for bootcamper reflection and progress tracking at School of Code.
 
-In the project directory, you can run:
+## Motivation.
 
-### `npm start`
+As a part of the Bootcamp at School of Code, the bootcampers are challenged to create an MVP front-end app that improves an aspect of the Bootcamp in one week in teams of four members. This app is the result of the efforts of Antony (ajp64), Dan (Dan-Sutton), Ben (benmhcode), and me working together during that week.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+We realised that after an intense day of coding, people are less inclined to fill out multiple forms requiring text input. Because of this, Bootcampers are engaging with the forms less than would be preferred. 
+In addition, there is no way for the bootcamper to review and look back on the forms in one place. If they had this, it would be easier to keep track of where they are on their journey and what else they need to do to keep on track.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Also some Bootcampers we spoke to had previously spent up to an extra hour completing the forms - this can happen when there is a language barrier. We want to provide a quick and efficient way to gain valuable insight into a bootcamper's experience.
+## Description.
+In the frontend Campfire app has an intuitive form that is filled in quickly by typing the subject that the bootcamper wants to give feedback on and selecting the corresponding buttons. Also, it allows them to give feedback on their mood by a slide bar and use the microphone to record any thoughts or notes.
+Once the form is submitted, the information is stored in a database in the backend and the bootcamper can review the previous information submitted throughout the week.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+>Feedback form.
+<img src="./images/dashboard.png" />
+<img src="./images/dashboard5.png" />
+>Dashboard.
+<img src="./images/dashboard6.png" />
+<img src="./images/dasboard4.png" />
